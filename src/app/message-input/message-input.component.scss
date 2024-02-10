@@ -1,0 +1,14 @@
+.message-input-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+
+  input {
+    flex-grow: 1;
+    margin-right: 1rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+  }
+}

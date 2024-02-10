@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, sans-serif; }
+
+
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #f0f0f0;
+  overflow: auto;
+}
+
+.chat-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-area {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.message-input {
+  margin: 10px;
+}
+
+
+
+
