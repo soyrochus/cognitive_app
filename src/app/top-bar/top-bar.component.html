@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <div class="toolbar-left">
+    <mat-tab-group (selectedIndexChange)="onTabChanged($event)">
+      <mat-tab label="Use Case 1"></mat-tab>
+      <mat-tab label="Use Case 2"></mat-tab>
+      <!-- Add more tabs as needed -->
+    </mat-tab-group>
+  </div>
+  <span class="example-spacer"></span>
+  <div class="toolbar-right">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+      <!-- Add more menu items as needed -->
+    </mat-menu>
+  </div>
+</mat-toolbar>
+

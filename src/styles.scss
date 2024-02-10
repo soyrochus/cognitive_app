@@ -2,23 +2,41 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, sans-serif; }
 
 
-
+/* styles.css */
 .app-container {
   display: flex;
-  height: 100vh;
+  flex-direction: column; /* Stack children vertically */
+  height: 100vh; /* Full viewport height */
+}
+
+.top-bar {
+  width: 100%; /* Full width */
+  z-index: 10; /* Higher than the other elements, if it needs to be above in stacking context */
+  /* No fixed position needed unless you want the bar to remain at top when scrolling */
+}
+
+/* Container for sidebar and chat area */
+.content-container {
+  display: flex;
+  flex-grow: 1; /* Take up the remaining space */
+  height: calc(100vh - height_of_top_bar); /* Adjust the height based on the actual height of your top bar */
 }
 
 .sidebar {
-  width: 20%;
-  background-color: #f0f0f0;
-  overflow: auto;
+  /* Your existing styles */
+  width: 20%; /* Example width */
+  overflow-y: auto; /* For scrolling */
 }
 
 .chat-container {
-  flex-grow: 1;
+  flex-grow: 1; /* Take up remaining space */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Keep chat area and message input stacked */
 }
+
+/* Your other styles */
+
+
 
 .chat-area {
   flex-grow: 1;
