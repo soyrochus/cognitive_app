@@ -12,3 +12,17 @@
     padding: 0.5rem 1rem;
   }
 }
+
+.message-form {
+  display: flex;
+  align-items: center; /* This ensures vertical alignment */
+  gap: 8px; /* Adjust the gap as needed */
+
+  .full-width {
+    flex-grow: 1; /* This makes the input field grow to fill the space */
+  }
+
+  button {
+    flex-shrink: 0; /* This prevents the button from shrinking */
+  }
+}
