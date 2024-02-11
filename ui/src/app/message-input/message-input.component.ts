@@ -4,6 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ApiService } from '../api.service';
+import { ChatService } from '../chat.service';
 
 @Component({
   selector: 'app-message-input',
@@ -17,14 +18,17 @@ export class MessageInputComponent {
 
   message: string = '';
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private chatService: ChatService) { }
 
   sendMessage() {
     console.log(this.message);
+    this.chatService.addMessage(this.message);
 
     this.apiService.sendPrompt(this.message).subscribe(response => {
        console.log(response);
-    });
+       this.chatService.addMessage(response);
+    })
+
      // Clear input after sending
     this.message = '';
   }
