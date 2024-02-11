@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./deploy/Dockerfile
+      target: prod
+    image: cognitive_api:${COGNITIVE_API_VERSION:-latest}
+    restart: always
+    env_file:
+    - .env
+    environment:
+      COGNITIVE_API_HOST: 0.0.0.0
+      COGNITIVE_API_DB_FILE: /db_data/db.sqlite3
+    volumes:
+    - cognitive_api-db-data:/db_data/
+
+
+
+volumes:
+  cognitive_api-db-data:
+    name: cognitive_api-db-data
